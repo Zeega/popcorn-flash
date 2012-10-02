@@ -9600,6 +9600,7 @@ Popcorn.player( "youtube", {
     _.each(Popcorn.guid().toString().split(''), function(num){
       guid += 'abcdefghijklmnopqrstuvwxyz'[num]
     })
+    console.log('guid:',guid);
     media.youtubeId = guid;//Math.floor( Math.random()*1000).toString(16);
   
     media.appendChild( container );
@@ -9622,6 +9623,7 @@ Popcorn.player( "youtube", {
         // more youtube callback nonsense
          stateChangeEventHandler[media.youtubeId] = function( state )
          {
+
           if ( state === 1&&media.canPlay==0)
           { 
             media.canPlay=1;
@@ -10045,7 +10047,7 @@ Popcorn.player( "flashvideo", {
 
       src = /(http.*)/.exec( media.src )[ 1 ];
      
-      swfobject.embedSWF(sessionStorage.getItem('hostname')+sessionStorage.getItem('directory')+"MediaPlayer.swf", container.id, "100%", "100%", "9.0.0", false, flashvars, params, attributes);
+      swfobject.embedSWF("assets/MediaPlayer.swf", container.id, "100%", "100%", "9.0.0", false, flashvars, params, attributes);
     
     
      

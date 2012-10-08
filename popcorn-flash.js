@@ -9600,7 +9600,6 @@ Popcorn.player( "youtube", {
     _.each(Popcorn.guid().toString().split(''), function(num){
       guid += 'abcdefghijklmnopqrstuvwxyz'[num]
     })
-    console.log('guid:',guid);
     media.youtubeId = guid;//Math.floor( Math.random()*1000).toString(16);
   
     media.appendChild( container );
@@ -9673,7 +9672,7 @@ Popcorn.player( "youtube", {
               currentTime = media.youtubeObject.getCurrentTime();
               media.dispatchEvent( "timeupdate" );
               !media.paused && media.pause();
-              media.youtubeObject.setVolume(options.volume);
+              if(options.volume>1) media.youtubeObject.setVolume(options.volume);
             }
         
           }

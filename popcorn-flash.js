@@ -9568,7 +9568,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
 // A global callback for youtube... that makes me angry
 onYouTubePlayerReady = function( containerId )
 {
-  console.log(containerId);
   onYouTubePlayerReady[ containerId ] && onYouTubePlayerReady[ containerId ]();
 };
 // fixed 09/28/2012
